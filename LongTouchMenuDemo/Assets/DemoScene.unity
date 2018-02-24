@@ -668,6 +668,8 @@ MonoBehaviour:
   spinnerSprite: {fileID: 21300000, guid: b9b4f3f6a959b43f2a315587d190b4d9, type: 3}
   spinnerSize: 12
   spinnerRadius: 120
+  buttonDefaultScale: 1
+  buttonTouchUpScale: 1.2
   menuButtonList:
   - {fileID: 554855547}
   - {fileID: 1860592272}

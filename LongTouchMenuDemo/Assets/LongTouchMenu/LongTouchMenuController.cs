@@ -16,6 +16,9 @@ public class LongTouchMenuController : MonoBehaviour {
 	[Range(0.1f, 150.0f)]
 	public float spinnerRadius = 120.0f;
 
+	public float buttonDefaultScale = 1.0f;
+	public float buttonTouchUpScale = 1.2f;
+
 	/**
 	반드시 Button Component를 가진 GameObject를 넣어야 함
 	 */
@@ -29,7 +32,7 @@ public class LongTouchMenuController : MonoBehaviour {
 			public LongTouchButtonController controller = null;
 		}
 		private List<LongTouchButton> btnList;
-		public MenuButtonController(Canvas canvas, List<GameObject> btnList, float radius) {
+		public MenuButtonController(Canvas canvas, List<GameObject> btnList, float radius, float buttonDefaultScale, float buttonTouchUpScale) {
 			this.btnList = new List<LongTouchButton>();
 
 			btnGroup = new GameObject();
@@ -51,6 +54,8 @@ public class LongTouchMenuController : MonoBehaviour {
 				newBtn.btn.transform.localPosition = new Vector2(x, y);
 
 				LongTouchButtonController controller = newBtn.btn.AddComponent<LongTouchButtonController>();
+				controller.defaultScaleVal = buttonDefaultScale;
+				controller.increaseScaleVal = buttonTouchUpScale;
 				newBtn.controller = controller;
 				this.btnList.Add(newBtn);
 			}
@@ -149,7 +154,7 @@ public class LongTouchMenuController : MonoBehaviour {
 			if (canvasObject.GetComponent<Canvas>()!=null) {
             	Canvas canvas=canvasObject.GetComponent<Canvas>();
 				menuLoadingSpinner = new MenuLoadingSpinner(canvas, spinnerSprite, spinnerSize);
-				menuBtnController = new MenuButtonController(canvas, menuButtonList, spinnerRadius);
+				menuBtnController = new MenuButtonController(canvas, menuButtonList, spinnerRadius, buttonDefaultScale, buttonTouchUpScale);
 			}else{
 				Debug.Log("Can't find canvas component");
 			}
