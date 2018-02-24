@@ -10,7 +10,7 @@
 2. 상단 메뉴 `GameObject` - `Create Empty`를 눌러 빈 게임오브젝트를 생성합니다.
 3. 그리고 해당 오브젝트에 `Long Touch Menu Controller`를 추가합니다.
 4. 각 요소들을 다음 설명에 따라 설정합니다.  
-<img src="Image/LongTouchMenuController01.png" alt="LongTouchMenu01" style="width: 288px;"/>
+<img src="Image/LongTouchMenuController01.png" alt="LongTouchMenu01" width="288" height="321" />
     - `Canvas Object`: Scene의 Canvas를 연결합니다.
     - `Active Frame`: 동작 속도입니다. 얼마나 오래 터치를 하고있어야 메뉴가 나올 지 설정합니다.
     - `Spinner Sprite`: 로딩이 진행도를 표시하는 Sprite입니다.
